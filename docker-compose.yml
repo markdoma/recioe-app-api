@@ -2,10 +2,10 @@ version: "3.9"
 
 services:
   app:
-    build: 
+    build:
       context: .
       args:
-        - DEV=true
+        - DEV=false
     ports:
       - "8000:8000"
     volumes:
@@ -21,7 +21,7 @@ services:
       - DB_PASS=changeme
     depends_on:
       - db
-  
+
   db:
     image: postgres:13-alpine
     volumes:
